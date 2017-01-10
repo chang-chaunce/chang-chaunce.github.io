@@ -1,6 +1,3 @@
-# before_install:
-# - openssl aes-256-cbc -K $encrypted_6e44e4ebbcac_key -iv $encrypted_6e44e4ebbcac_iv
-#   -in .travis/travis_rsa_enc -out .travis/travis_rsa -d
 language: node_js
 node_js:
 - "4"  # nodejs的版本
@@ -14,7 +11,7 @@ before_install:
 # 将xxxxxxxxxxx替换上面生成的内容
 # 这里面的文件路径可根据自己的情况进行修改
 # 解密travis_rsa_enc 输出到.ssh/文件夹下，命名为id_rsa
-- openssl aes-256-cbc -K $encrypted_6e44e4ebbcac_key -iv $encrypted_6e44e4ebbcac_iv -in .travis/travis_rsa_enc -out ~/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_fdad8b6027a6_key -iv $encrypted_fdad8b6027a6_iv -in .travis/travis_rsa_enc -out ~/.ssh/id_rsa -d
 # 设置id_rsa文件权限
 - chmod 600 ~/.ssh/id_rsa
 # 添加ssh密钥
